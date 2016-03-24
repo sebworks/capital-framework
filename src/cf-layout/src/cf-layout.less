@@ -650,36 +650,114 @@
     });
   }
 }
-//
-// Hero
-//
+
+/* topdoc
+  name: Theme variables
+  family: cf-layout
+  notes:
+    - "The following sizing variables are exposed,
+       allowing you to easily override them before compiling."
+  patterns:
+  - name: Sizes
+    codenotes:
+      - |
+        @hero-desktop-height
+        @hero-image-height
+  tags:
+  - less
+*/
 
 @hero-desktop-height: 285px;
 @hero-image-height: 195px;
-@desktop-min: 801px;
+
+/* topdoc
+  name: Hero
+  family: cf-layout
+  patterns:
+    - name: Default example
+      markup: |
+        <section class="hero">
+            <div class="wrapper hero_wrapper">
+            <div class="hero_text">
+                <h1 class="hero_heading">Hero Heading</h1>
+                <p class="hero_subhead">Hero Sub-Heading</p>
+                <a href="/"
+                   class="hero_cta>
+                    Hero Link
+                </a>
+            </div>
+
+            <div class="hero_image"
+                 style="background-image: url( illustration.png );"></div>
+            </div>
+        </section>
+      codenotes:
+        - |
+          Structural cheat sheet:
+          -----------------------
+          .hero
+            .wrapper.hero_wrapper
+              .hero_text
+                .hero_heading
+                .hero_subhead
+                .hero_cta
+              .hero_image
+    - name: Overlay example with white text
+      markup: |
+        <section class="hero
+                        hero__overlay
+                        hero__white-text">
+            <div class="wrapper hero_wrapper"
+                 style="background-image: url( bg-img.jpg);">
+            <div class="hero_text">
+                <h1 class="hero_heading">Hero Heading</h1>
+                <p class="hero_subhead">Hero Sub-Heading</p>
+                <a href="/"
+                   class="hero_cta>
+                    Hero Link
+                </a>
+            </div>
+
+            <div class="hero_image"
+                 style="background-image: url( inset-img.jpg );"></div>
+            </div>
+        </section>
+      codenotes:
+        - |
+          Structural cheat sheet:
+          -----------------------
+          .hero.hero__overlay.hero__white-text
+            .wrapper.hero_wrapper
+              .hero_text
+                .hero_heading
+                .hero_subhead
+                .hero_cta
+              .hero_image
+  tags:
+    - cfgov-molecules
+*/
 
 .hero {
     background-color: @block__bg;
 
-    &_wrapper {
-        box-sizing: border-box;
-        padding: unit(@grid_gutter-width / @base-font-size-px, em)
-                 unit(15px / @base-font-size-px, em);
+    .respond-to-min( @bp-sm-min, {
+        display: table;
         width: 100%;
+    } );
 
-        .respond-to-min(@bp-sm-min, {
-            display: table;
-        });
+    &_wrapper {
+        padding-top: unit( @grid_gutter-width / @base-font-size-px, em );
+        padding-bottom: unit( @grid_gutter-width / @base-font-size-px, em );
 
-        .respond-to-min(@bp-med-min, {
-            padding-top: unit(45px / @base-font-size-px, em);
-            padding-bottom: unit(45px / @base-font-size-px, em);
-            min-height: unit(@hero-desktop-height / @base-font-size-px, em);
-        });
+        .respond-to-min( @bp-sm-min, {
+            padding-right: 15px;
+            padding-left: 15px;
+        } );
 
-        .respond-to-min(@bp-xl-min, {
-            padding-right: 0;
-            padding-left: 0;
+        .respond-to-min( @bp-med-min, {
+            padding-top: unit( 45px / @base-font-size-px, em );
+            padding-bottom: unit( 45px / @base-font-size-px, em );
+            min-height: unit( ( @hero-desktop-height - ( 45px * 2 ) ) / @base-font-size-px, em );
         });
 
         .lt-ie9 & {
@@ -690,8 +768,11 @@
     }
 
     &_text {
-        .respond-to-min(@bp-sm-min, {
-            .grid_column(7,12);
+        .grid_column( 1, 1 );
+
+        .respond-to-min( @bp-sm-min, {
+            .grid_column( 7, 12 );
+
             display: table-cell;
             vertical-align: middle;
         });
@@ -700,47 +781,87 @@
     &_heading {
         .heading-1();
 
-        .respond-to-max(@bp-sm-max, {
+        .respond-to-max( @bp-sm-max, {
             .heading-2();
-        });
+        } );
     }
 
     &_subhead,
-    &_cta:not(.btn) {
-        .heading-3();
+    &_cta:not( .btn ) {
+        .webfont-regular();
 
-        margin-bottom: unit(@grid_gutter-width / @font-size, em);
+        font-size: @size-iv;
+        line-height: 1.25;
 
-        .respond-to-max(@bp-sm-max, {
-            // Use the same regular weight but reduce the sizes to h4 size
-            // Can't use .into-paragraph because it has a different breakpoint
-            font-size: unit(18px / @base-font-size-px, em);
-            margin-bottom: unit(@grid_gutter-width / 18px, em);
-        });
+        .respond-to-min( @bp-med-min, {
+            font-size: @size-iii;
+        } );
+    }
 
-        &:last-child {
-            margin-bottom: initial;
-        }
+    &_subhead:not( :last-child ) {
+        margin-bottom: unit( @grid_gutter-width / @size-iv, em );
+
+        .respond-to-min( @bp-med-min, {
+            margin-bottom: unit( @grid_gutter-width / @size-iii, em );
+        } );
     }
 
     &_cta {
-        margin-bottom: initial;
+        display: block;
     }
 
     &_image {
-        min-height: unit(@hero-image-height / @base-font-size-px, em);
+        .grid_column( 1, 1 );
+
+        min-height: unit( @hero-image-height / @base-font-size-px, em );
+
         background-position: center;
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: cover;
 
-        .respond-to-min(@bp-sm-min, {
-            .grid_column(5,12);
+        .respond-to-min( @bp-sm-min, {
+            .grid_column( 5, 12 );
+
+            // Keep the text and image vertically centered
             display: table-cell;
             vertical-align: middle;
-        });
 
-        .respond-to-max(@bp-xs-max, {
-            margin-top: unit(@grid_gutter-width / @base-font-size-px, em);
-        });
+            background-size: contain;
+        } );
+
+        .respond-to-max( @bp-xs-max, {
+            margin-top: unit( @grid_gutter-width / @base-font-size-px, em );
+        } );
+    }
+
+    &__overlay {
+        .hero_wrapper {
+            background-repeat: no-repeat;
+        }
+
+        .respond-to-max( @bp-xm-max, {
+            .hero_wrapper {
+                // Overwrite the image that is set in the markup because
+                // we're showing the image container below instead
+                background: transparent !important;
+            }
+        } );
+
+        .respond-to-min( @bp-sm-min, {
+            .hero_image {
+                // Overwrite the image but don't remove the container from
+                // the grid flow. Necessary due to table-cell.
+                background: transparent !important;
+            }
+        } );
+    }
+
+    &__white-text {
+        .respond-to-min( @bp-sm-min, {
+            .hero_wrapper {
+                background-color: @gray;
+                color: @white;
+            }
+        } );
     }
 }
