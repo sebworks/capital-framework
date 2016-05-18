@@ -514,3 +514,19 @@
     }
 
 }
+
+//
+// Full Width Button
+//
+
+.btn__full {
+
+    .respond-to-max(@bp-xs-max, {
+        display: block;
+        width: 100%;
+
+        + .btn__full {
+            margin-left: initial;
+        }
+    });
+}

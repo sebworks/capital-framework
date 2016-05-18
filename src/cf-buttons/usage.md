@@ -227,3 +227,13 @@
 <button class="btn btn__super active" title="Test button">Button Tag</button>
 <input type="submit" value="Input Tag" class="btn btn__super active">
 ```
+
+## Full width button
+
+Modifier to show buttons at full width at small screen sizes
+
+<btn class="btn btn__full">Button Text</btn>
+
+```
+<btn class="btn btn__full">Button Text</btn>
+```
