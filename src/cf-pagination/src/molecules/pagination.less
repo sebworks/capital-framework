@@ -1,0 +1,113 @@
+//
+// Theme variables
+//
+
+// Color variables
+// $color- variables are from 18F's US Web Design Standards
+// https://github.com/18F/web-design-standards/blob/18f-pages-staging/src/stylesheets/core/_variables.scss
+
+@pagination-text-color: #75787B;
+@pagination-bg-color: #F0F1F1;
+
+// Sizing variables
+
+@pagination-font-size__px: 16px;
+@pagination-font-size__em: unit( @pagination-font-size__px / @base-font-size-px, em );
+@pagination-height__px: 42px;
+@pagination-width__px: 130px;
+
+//
+// Pagination
+//
+
+.m-pagination {
+    position: relative;
+    display: block;
+    height: @pagination-height__px;
+
+    button[ type="submit" ] {
+        display: inline-block;
+        margin: 0 0 0 @pagination-font-size__em / 2;
+        vertical-align: middle;
+        .webfont-medium();
+    }
+
+    form {
+        display: block;
+        padding: unit( 5px / @base-font-size-px, em );
+        border-radius: unit( 4px / @base-font-size-px, em );
+        background: @pagination-bg-color;
+        color: @pagination-text-color;
+        text-align: center;
+    }
+
+    input[type="number"] {
+        display: inline-block;
+        // We need enough room for three digits and the
+        // number spinners for type="number" inputs.
+        width: unit( 42px / @pagination-font-size__px, em );
+        margin: 0 @pagination-font-size__em / 2;
+        text-align: right;
+        vertical-align: middle;
+        .webfont-medium();
+    }
+
+    label,
+    &_label {
+        display: inline-block;
+        margin: 0;
+        vertical-align: middle;
+    }
+
+    &_btn-prev,
+    &_btn-next {
+        height: @pagination-height__px;
+        width: @pagination-width__px;
+        padding: 0;
+        line-height: @pagination-height__px;
+        font-size: @pagination-font-size__px;
+        text-align: center;
+        .webfont-medium();
+
+        &.btn__disabled {
+          background-color: @pagination-bg-color;
+        }
+    }
+
+    &_btn-next {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .respond-to-max( @bp-xs-max, {
+        &_btn-prev,
+        &_btn-next {
+            margin-bottom: @pagination-font-size__em / 2;
+        }
+    } );
+
+    .respond-to-min( @bp-sm-min, {
+        &_btn-prev {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            &,
+            &:link,
+            &:visited {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+        }
+
+        &_btn-next {
+            &,
+            &:link,
+            &:visited {
+                  border-top-left-radius: 0;
+                  border-bottom-left-radius: 0;
+              }
+        }
+    } );
+}
