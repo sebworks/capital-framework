@@ -11,7 +11,7 @@
 
 // Sizing variables
 
-@pagination-font-size__px: 16px;
+@pagination-font-size__px: @base-font-size-px;
 @pagination-font-size__em: unit( @pagination-font-size__px / @base-font-size-px, em );
 @pagination-height__px: 42px;
 @pagination-width__px: 130px;
@@ -22,40 +22,46 @@
 
 .m-pagination {
     position: relative;
-    display: block;
-    height: @pagination-height__px;
 
-    button[ type="submit" ] {
-        display: inline-block;
-        margin: 0 0 0 @pagination-font-size__em / 2;
-        vertical-align: middle;
-        .webfont-medium();
-    }
-
-    form {
-        display: block;
+    &_form {
         padding: unit( 5px / @base-font-size-px, em );
+
         border-radius: unit( 4px / @base-font-size-px, em );
         background: @pagination-bg-color;
         color: @pagination-text-color;
         text-align: center;
     }
 
-    input[type="number"] {
-        display: inline-block;
+    // Currently requires explicit input[type="number"] due to cascade issue
+    // TODO: Fix cascade issue, possibly due to import order
+    input[type="number"],
+    &_current-page {
+        .webfont-medium();
+
+        padding-top: unit( 5.5px / @base-font-size-px, em );
+        padding-bottom: unit( 5.5px / @base-font-size-px, em );
+
         // We need enough room for three digits and the
         // number spinners for type="number" inputs.
         width: unit( 42px / @pagination-font-size__px, em );
         margin: 0 @pagination-font-size__em / 2;
+
         text-align: right;
         vertical-align: middle;
-        .webfont-medium();
     }
 
-    label,
     &_label {
         display: inline-block;
+
+        margin-bottom: 0;
+        margin-right: @pagination-font-size__em / 2;
+
+        vertical-align: middle;
+    }
+
+    &_submit-btn {
         margin: 0;
+
         vertical-align: middle;
     }
 
@@ -63,20 +69,18 @@
     &_btn-next {
         height: @pagination-height__px;
         width: @pagination-width__px;
-        padding: 0;
-        line-height: @pagination-height__px;
-        font-size: @pagination-font-size__px;
+        padding-top: unit( 12px / @base-font-size-px, em );
+        padding-bottom: unit( 12px / @base-font-size-px, em );
+
         text-align: center;
-        .webfont-medium();
 
         &.btn__disabled {
-          background-color: @pagination-bg-color;
+            background-color: @pagination-bg-color;
         }
     }
 
     &_btn-next {
         position: absolute;
-        top: 0;
         right: 0;
     }
 
@@ -90,24 +94,14 @@
     .respond-to-min( @bp-sm-min, {
         &_btn-prev {
             position: absolute;
-            top: 0;
-            left: 0;
 
-            &,
-            &:link,
-            &:visited {
-                border-top-right-radius: 0;
-                border-bottom-right-radius: 0;
-            }
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
         }
 
         &_btn-next {
-            &,
-            &:link,
-            &:visited {
-                  border-top-left-radius: 0;
-                  border-bottom-left-radius: 0;
-              }
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
         }
     } );
 }

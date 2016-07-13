@@ -46,33 +46,41 @@ To enable the component to jump directly to the paginated content, place `#pagin
 
 <nav class="m-pagination" role="navigation" aria-label="Pagination">
     <a class="btn
-              btn__super
               m-pagination_btn-prev"
        href="?page=1#o-filterable-list-controls">
         <span class="cf-icon cf-icon-left btn_icon__left "></span>
         Newer
     </a>
     <a class="btn
-             btn__super
              m-pagination_btn-next"
        href="?page=3#o-filterable-list-controls">
         Older
         <span class="cf-icon cf-icon-right btn_icon__right"></span>
     </a>
-    <form action="#o-filterable-list-controls">
-        <label for="m-pagination_current-page">
+    <form class="m-pagination_form"
+            action="#o-filterable-list-controls">
+        <label class="m-pagination_label"
+                 for="m-pagination_current-page">
             Page
             <span class="u-visually-hidden">
-                number 2 out of 149 total pages
+                number 2 out
             </span>
-        </label>
-        <input id="m-pagination_current-page" name="page" type="number" min="1" max="2" pattern="[0-9]*" inputmode="numeric" value="1">
-        <span class="m-pagination_label">
+            <input class="m-pagination_current-page"
+                     id="m-pagination_current-page"
+                     name="page"
+                     type="number"
+                     min="1"
+                     max="149"
+                     pattern="[0-9]*"
+                     inputmode="numeric"
+                     value="2">
             of 149
-        </span>
-        <button class="btn btn__link" id="m-pagination_submit-btn" type="submit">
-            Go
-        </button>
+        </label>
+        <button class="btn
+                         btn__link
+                         m-pagination_submit-btn"
+                  id="m-pagination_submit-btn"
+                  type="submit">Go</button>
     </form>
 </nav>
 
@@ -85,33 +93,41 @@ To enable the component to jump directly to the paginated content, place `#pagin
 
 <nav class="m-pagination" role="navigation" aria-label="Pagination">
     <a class="btn
-              btn__super
               m-pagination_btn-prev"
-        href="?page=1#o-filterable-list-controls">
+       href="?page=1#o-filterable-list-controls">
         <span class="cf-icon cf-icon-left btn_icon__left "></span>
         Newer
     </a>
     <a class="btn
-              btn__super
-              m-pagination_btn-next"
+             m-pagination_btn-next"
        href="?page=3#o-filterable-list-controls">
         Older
         <span class="cf-icon cf-icon-right btn_icon__right"></span>
     </a>
-    <form action="#o-filterable-list-controls">
-        <label for="m-pagination_current-page">
+    <form class="m-pagination_form"
+            action="#o-filterable-list-controls">
+        <label class="m-pagination_label"
+                 for="m-pagination_current-page">
             Page
             <span class="u-visually-hidden">
-                number 2 out of 149 total pages
+                number 2 out
             </span>
-        </label>
-        <input id="m-pagination_current-page" name="page" type="number" min="1" max="2" pattern="[0-9]*" inputmode="numeric" value="1">
-        <span class="m-pagination_label">
+            <input class="m-pagination_current-page"
+                     id="m-pagination_current-page"
+                     name="page"
+                     type="number"
+                     min="1"
+                     max="149"
+                     pattern="[0-9]*"
+                     inputmode="numeric"
+                     value="2">
             of 149
-        </span>
-        <button class="btn btn__link" id="m-pagination_submit-btn" type="submit">
-            Go
-        </button>
+        </label>
+        <button class="btn
+                         btn__link
+                         m-pagination_submit-btn"
+                  id="m-pagination_submit-btn"
+                  type="submit">Go</button>
     </form>
 </nav>
 ```
