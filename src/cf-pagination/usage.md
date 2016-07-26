@@ -16,12 +16,12 @@ Theme variables for setting the color and sizes. Color variables are from 18F's 
 
 Pagination text color.
 ```
-@pagination-text-color: #75787B;
+@pagination-text-color: #757575; // $color-gray-medium
 ```
 
 Pagination form background color.
 ```
-@pagination-bg-color:   #F0F1F1;
+@pagination-bg-color: #f1f1f1; // $color-gray-lightest
 ```
 
 
