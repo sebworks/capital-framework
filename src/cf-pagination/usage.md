@@ -1,4 +1,4 @@
-The cf-pagination component provides a responsive approach to multipage page navigation.
+The cf-pagination component provides a responsive approach to multipage page navigation for Capital Framework.
 
 > NOTE: If you use `cf-pagination.less` directly,
   be sure to run the file through
@@ -6,11 +6,19 @@ The cf-pagination component provides a responsive approach to multipage page nav
   or your compiled Capital Framework CSS will
   not work perfectly in older browsers.
 
+## Table of contents
+
+- [Dependencies](#dependencies)
+- [Variables](#variables)
+    - [Sizing variables](#sizing-variables)
+    - [Color variables](#color-variables)
+- [Default pagination](#default-pagination)
+- [Responsive behavior](#responsive-behavior)
+
 ## Dependencies
 - cf-core
 - cf-buttons
 - cf-icons
-
 
 ## Variables
 
@@ -49,7 +57,6 @@ Default pagination consists of "Previous" and "Next" links, styled as buttons, a
 
 To enable the component to jump directly to the paginated content, place `#pagination_content` directly above your paginated content.
 
-### Example
 <div id="pagination_content"></div>
 
 <!-- Paginated content here -->
@@ -89,8 +96,6 @@ To enable the component to jump directly to the paginated content, place `#pagin
         </button>
     </form>
 </nav>
-
-### Markup
 
 ```
 <div id="pagination_content"></div>
