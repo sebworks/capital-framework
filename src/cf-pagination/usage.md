@@ -40,25 +40,25 @@ Default pagination consists of "Previous" and "Next" links, styled as buttons, a
 To enable the component to jump directly to the paginated content, place `#pagination_content` directly above your paginated content.
 
 ### Example
-<div id="o-filterable-list-controls"></div>
+<div id="pagination_content"></div>
 
 <!-- Paginated content here -->
 
 <nav class="m-pagination" role="navigation" aria-label="Pagination">
     <a class="btn
               m-pagination_btn-prev"
-       href="?page=1#o-filterable-list-controls">
+       href="?page=1#pagination_content">
         <span class="cf-icon cf-icon-left btn_icon__left "></span>
         Newer
     </a>
     <a class="btn
              m-pagination_btn-next"
-       href="?page=3#o-filterable-list-controls">
+       href="?page=3#pagination_content">
         Older
         <span class="cf-icon cf-icon-right btn_icon__right"></span>
     </a>
     <form class="m-pagination_form"
-            action="#o-filterable-list-controls">
+            action="#pagination_content">
         <label class="m-pagination_label"
                  for="m-pagination_current-page">
             Page
@@ -87,25 +87,25 @@ To enable the component to jump directly to the paginated content, place `#pagin
 ### Markup
 
 ```
-<div id="o-filterable-list-controls"></div>
+<div id="pagination_content"></div>
 
 <!-- Paginated content here -->
 
 <nav class="m-pagination" role="navigation" aria-label="Pagination">
     <a class="btn
               m-pagination_btn-prev"
-       href="?page=1#o-filterable-list-controls">
+       href="?page=1#pagination_content">
         <span class="cf-icon cf-icon-left btn_icon__left "></span>
         Newer
     </a>
     <a class="btn
              m-pagination_btn-next"
-       href="?page=3#o-filterable-list-controls">
+       href="?page=3#pagination_content">
         Older
         <span class="cf-icon cf-icon-right btn_icon__right"></span>
     </a>
     <form class="m-pagination_form"
-            action="#o-filterable-list-controls">
+            action="#pagination_content">
         <label class="m-pagination_label"
                  for="m-pagination_current-page">
             Page
@@ -124,8 +124,8 @@ To enable the component to jump directly to the paginated content, place `#pagin
             of 149
         </label>
         <button class="btn
-                         btn__link
-                         m-pagination_submit-btn"
+                       btn__link
+                       m-pagination_submit-btn"
                   id="m-pagination_submit-btn"
                   type="submit">Go</button>
     </form>

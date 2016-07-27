@@ -11,10 +11,10 @@
 
 // Sizing variables
 
-@pagination-font-size__px: @base-font-size-px;
-@pagination-font-size__em: unit( @pagination-font-size__px / @base-font-size-px, em );
-@pagination-height__px: 42px;
-@pagination-width__px: 130px;
+@pagination-font-size-px: @base-font-size-px;
+@pagination-font-size-em: unit( @pagination-font-size-px / @base-font-size-px, em );
+@pagination-btn-height-px: 42px;
+@pagination-btn-width-px: 130px;
 
 //
 // Pagination
@@ -43,8 +43,8 @@
 
         // We need enough room for three digits and the
         // number spinners for type="number" inputs.
-        width: unit( 42px / @pagination-font-size__px, em );
-        margin: 0 @pagination-font-size__em / 2;
+        width: unit( 42px / @pagination-font-size-px, em );
+        margin: 0 @pagination-font-size-em / 2;
 
         text-align: right;
         vertical-align: middle;
@@ -54,12 +54,12 @@
         display: inline-block;
 
         margin-bottom: 0;
-        margin-right: @pagination-font-size__em / 2;
+        margin-right: @pagination-font-size-em / 2;
 
         vertical-align: middle;
     }
 
-    &_submit-btn {
+    &_btn-submit {
         margin: 0;
 
         vertical-align: middle;
@@ -67,8 +67,8 @@
 
     &_btn-prev,
     &_btn-next {
-        height: @pagination-height__px;
-        width: @pagination-width__px;
+        height: @pagination-btn-height-px;
+        width: @pagination-btn-width-px;
         padding-top: unit( 12px / @base-font-size-px, em );
         padding-bottom: unit( 12px / @base-font-size-px, em );
 
@@ -87,7 +87,7 @@
     .respond-to-max( @bp-xs-max, {
         &_btn-prev,
         &_btn-next {
-            margin-bottom: @pagination-font-size__em / 2;
+            margin-bottom: @pagination-font-size-em / 2;
         }
     } );
 
