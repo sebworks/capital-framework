@@ -1,5 +1,7 @@
 The cf-pagination component provides a responsive approach to multipage page navigation for Capital Framework.
 
+[`cf-core`](../cf-core), ['cf-buttons'](../cf-buttons), and ['cf-icons'](../cf-icons) components are all dependencies of this component."
+
 > NOTE: If you use `cf-pagination.less` directly,
   be sure to run the file through
   [Autoprefixer](https://github.com/postcss/autoprefixer),
@@ -8,17 +10,11 @@ The cf-pagination component provides a responsive approach to multipage page nav
 
 ## Table of contents
 
-- [Dependencies](#dependencies)
 - [Variables](#variables)
     - [Sizing variables](#sizing-variables)
     - [Color variables](#color-variables)
 - [Default pagination](#default-pagination)
 - [Responsive behavior](#responsive-behavior)
-
-## Dependencies
-- cf-core
-- cf-buttons
-- cf-icons
 
 ## Variables
 
