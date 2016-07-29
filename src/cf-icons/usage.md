@@ -70,7 +70,7 @@ Note that this issue only pops up in older versions of Internet Explorer.
 
 ## Helpers
 
-### icon sizes
+### Icon sizes
 
 #### Large icon size
 
@@ -122,8 +122,8 @@ MIT Licensed by Font Awesome
 .@{cf-icon-prefix}__rotate-90  { .cf-icon__rotate(90deg, 1);  }
 ```
 
-First parameter is @degrees.
-Second parameter is @rotation
+First parameter is `@degrees`.
+Second parameter is `@rotation`.
 
 #### Icon flip mixin
 
@@ -148,7 +148,7 @@ MIT Licensed by Font Awesome
 <span class="cf-icon cf-icon-update cf-icon__border"></span>
 ```
 
-Border color set by @cf-icon-border-color
+Border color set by `@cf-icon-border-color`
 
 #### Rotated icons
 
