@@ -1,5 +1,7 @@
 The cf-forms component provides extensions to the basic form styles for Capital Framework.
 
+[`cf-core`](../cf-core), ['cf-buttons'](../cf-buttons), and ['cf-icons'](../cf-icons) components are all dependencies of this component."
+
 > NOTE: If you use `cf-forms.less` directly,
   be sure to run the file through
   [Autoprefixer](https://github.com/postcss/autoprefixer),
@@ -7,7 +9,7 @@ The cf-forms component provides extensions to the basic form styles for Capital 
   not work perfectly in older browsers.
 
 ## Table of contents
-- [Dependencies](#dependencies)
+
 - [Variables](#variables)
     - [Color variables](#color-variables)
     - [Sizing variables](#sizing-variables)
@@ -25,11 +27,6 @@ The cf-forms component provides extensions to the basic form styles for Capital 
     - [Super input and button](#super-input-and-button)
     - [Button inside input](#button-inside-input)
     - [Super button inside of a super input](#super-button-inside-of-a-super-input)
-
-## Dependencies
-- cf-core
-- cf-buttons
-- cf-icons
 
 ## Variables
 
